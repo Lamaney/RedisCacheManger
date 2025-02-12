@@ -72,5 +72,11 @@ namespace RedisTest.Controllers
         {
             return await redisCacheService.GetEntityFromHashAsync(hashKey, entityKey);
         }
+        
+        [HttpPut("updateHashEntry/{hashKey}/{entityKey}")]
+        public async Task<bool> UpdateHashEntry([FromRoute] string hashKey, [FromRoute] string entityKey, [FromBody] User user)
+        {
+            return await redisCacheService.UpdateHashEntryAsync(hashKey, entityKey, user);
+        }
     }
 }
