@@ -201,6 +201,18 @@ public class RedisRedisCacheService<T>(
         return true;
     }
 
+    public async Task<bool> DeleteHashEntryAsync(string hashKey, string entityKey)
+    {
+        await using var client = await cacheManager.GetClientAsync();
+        return await client.RemoveEntryFromHashAsync(hashKey, entityKey);
+    }
+
+    public async Task<bool> DeleteHashAsync(string hashKey)
+    {
+        await using var client = await cacheManager.GetClientAsync();
+        return await client.RemoveEntryAsync(hashKey);
+    }
+
 
     public void Dispose()
     {

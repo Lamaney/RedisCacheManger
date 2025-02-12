@@ -78,5 +78,17 @@ namespace RedisTest.Controllers
         {
             return await redisCacheService.UpdateHashEntryAsync(hashKey, entityKey, user);
         }
+        
+        [HttpDelete("deleteHashEntry/{hashKey}/{entityKey}")]
+        public async Task<bool> DeleteHashEntry([FromRoute] string hashKey, [FromRoute] string entityKey)
+        {
+            return await redisCacheService.DeleteHashEntryAsync(hashKey, entityKey);
+        }
+        
+        [HttpDelete("deleteHash/{hashKey}")]
+        public async Task<bool> DeleteHash([FromRoute] string hashKey)
+        {
+            return await redisCacheService.DeleteHashAsync(hashKey);
+        }
     }
 }
