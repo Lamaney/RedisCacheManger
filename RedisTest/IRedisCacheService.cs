@@ -1,6 +1,6 @@
 ﻿namespace RedisTest;
 
-public interface ICacheService<T> where T : class
+public interface IRedisCacheService<T> where T : class
 {
     Task<T?> GetAsync(string key);
     Task<T> UpdateAsync(T value,  string key);

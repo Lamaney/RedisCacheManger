@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace RedisTest;
 
-public class CacheService<T>(
+public class RedisRedisCacheService<T>(
     IRedisClientsManagerAsync cacheManager)
-    : IDisposable, IAsyncDisposable, ICacheService<T>
+    : IDisposable, IAsyncDisposable, IRedisCacheService<T>
     where T : class
 {
     //Key üzerinden veri çekme

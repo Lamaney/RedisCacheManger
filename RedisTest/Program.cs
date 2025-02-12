@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen(c =>
 
 string? redisConnectionString = builder.Configuration.GetConnectionString("RedisConnection");
 builder.Services.AddSingleton<IRedisClientsManagerAsync>(new RedisManagerPool(redisConnectionString));
-builder.Services.AddSingleton(typeof(ICacheService<>), typeof(CacheService<>));
+builder.Services.AddSingleton(typeof(IRedisCacheService<>), typeof(RedisRedisCacheService<>));
 
 var app = builder.Build();
 

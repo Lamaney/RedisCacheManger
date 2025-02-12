@@ -38,3 +38,4 @@ C:\Users\Pc\Documents\git-repos\SimpleMicroservice\RedisTest\RedisTest\obj\Debug
 C:\Users\Pc\Documents\git-repos\SimpleMicroservice\RedisTest\RedisTest\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Pc\Documents\git-repos\SimpleMicroservice\RedisTest\RedisTest\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Pc\Documents\git-repos\SimpleMicroservice\RedisTest\RedisTest\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Pc\Documents\git-repos\SimpleMicroservice\RedisTest\RedisTest\obj\Debug\net9.0\RedisTest.sourcelink.json
