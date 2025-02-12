@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "9HVnl7Ecxm0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Pc\\Documents\\git-repos\\SimpleMicroservice\\RedisTest\\RedisTest\\RedisTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.openapi\\1.6.22\\microsoft.openapi.1.6.22.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\servicestack.common\\8.6.0\\servicestack.common.8.6.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\servicestack.interfaces\\8.6.0\\servicestack.interfaces.8.6.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\servicestack.redis\\8.6.0\\servicestack.redis.8.6.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\servicestack.text\\8.6.0\\servicestack.text.8.6.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\7.2.0\\swashbuckle.aspnetcore.swagger.7.2.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\7.2.0\\swashbuckle.aspnetcore.swaggergen.7.2.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\7.2.0\\swashbuckle.aspnetcore.swaggerui.7.2.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\system.memory\\4.6.0\\system.memory.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
