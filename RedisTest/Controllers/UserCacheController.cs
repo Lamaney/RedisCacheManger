@@ -60,5 +60,17 @@ namespace RedisTest.Controllers
         {
             return await redisCacheService.DeleteListsItemsAsync(listKey);
         }
+        
+        [HttpPost("setHash/{hashKey}/{entityKey}")]
+        public async Task<bool> SetHash([FromRoute] string hashKey, [FromRoute] string entityKey, [FromBody] User user)
+        {
+            return await redisCacheService.AddEntryToHash(hashKey, entityKey, user);
+        }
+        
+        [HttpGet("getEntityFromHash/{hashKey}/{entityKey}")]
+        public async Task<User?> GetEntityFromHash([FromRoute] string hashKey, [FromRoute] string entityKey)
+        {
+            return await redisCacheService.GetEntityFromHashAsync(hashKey, entityKey);
+        }
     }
 }

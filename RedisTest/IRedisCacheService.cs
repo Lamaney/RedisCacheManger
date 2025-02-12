@@ -11,4 +11,6 @@ public interface IRedisCacheService<T> where T : class
     Task RemoveFromListAsync(string listKey, T value);
     Task<T> AddToListAsync(string listKey, T value);
     Task<bool> DeleteListsItemsAsync(string listKey);
+    Task<bool> AddEntryToHash(string hashKey,string entityKey, T value);
+    Task<T?> GetEntityFromHashAsync(string hashKey, string entityKey);
 }
