@@ -14,7 +14,7 @@ public class RedisRedisCacheService<T>(
     {
         await using var client = await cacheManager.GetClientAsync();
         string value = await client.GetValueAsync(key);
-        return !string.IsNullOrEmpty(value) ? JsonSerializer.Deserialize<T>(value) : null;
+        return !string.IsNullOrEmpty(value) ? Deserialize(value) : null;
     }
 
     //Key üzerinden veri günceller
@@ -82,7 +82,7 @@ public class RedisRedisCacheService<T>(
 
         foreach (var item in value)
         {
-            await client.AddItemToListAsync(key, JsonSerializer.Serialize(item));
+            await client.AddItemToListAsync(key,Serialize(item));
         }
 
         return value;
@@ -107,7 +107,7 @@ public class RedisRedisCacheService<T>(
         var entityList = new List<T>(items.Count);
         foreach (string item in items)
         {
-            entityList.Add(JsonSerializer.Deserialize<T>(item));
+            entityList.Add(Deserialize(item));
         }
 
         return entityList;
@@ -117,7 +117,7 @@ public class RedisRedisCacheService<T>(
     public async Task RemoveFromListAsync(string listKey, T value)
     {
         await using var client = await cacheManager.GetClientAsync();
-        string serializedValue = JsonSerializer.Serialize(value);
+        string serializedValue =Serialize(value);
         await client.RemoveItemFromListAsync(listKey, serializedValue);
     }
 
@@ -130,7 +130,7 @@ public class RedisRedisCacheService<T>(
         }
 
         await using var client = await cacheManager.GetClientAsync();
-        await client.AddItemToListAsync(listKey, JsonSerializer.Serialize(value));
+        await client.AddItemToListAsync(listKey,Serialize(value));
         return value;
     }
 
@@ -156,7 +156,7 @@ public class RedisRedisCacheService<T>(
 
         await using var client = await cacheManager.GetClientAsync();
 
-        var res = await client.SetEntryInHashIfNotExistsAsync(hashKey, entityKey, JsonSerializer.Serialize(value));
+        var res = await client.SetEntryInHashIfNotExistsAsync(hashKey, entityKey, Serialize(value));
 
         return res;
     }
@@ -188,7 +188,7 @@ public class RedisRedisCacheService<T>(
             throw new InvalidOperationException($"Bu anahtar '{entityKey}' için veri bulunamadı.");
         }
 
-        var serializedValue = JsonSerializer.Serialize(value);
+        var serializedValue = Serialize(value);
         await client.RemoveEntryFromHashAsync(hashKey, entityKey);
         var result = await client.SetEntryInHashAsync(hashKey, entityKey, serializedValue);
 
