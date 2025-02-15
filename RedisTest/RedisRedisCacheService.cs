@@ -79,11 +79,15 @@ public class RedisRedisCacheService<T>(
         {
             throw new InvalidOperationException($"Anahtar '{key}' ile ilişkili bir liste zaten mevcut.");
         }
-
-        foreach (var item in value)
+        
+        List<string> serializedItems = new List<string>();
+        
+        for (var i = 0; i < value.Count; i++)
         {
-            await client.AddItemToListAsync(key,Serialize(item));
+            serializedItems.Add(Serialize(value[i]));
         }
+        
+        await client.AddRangeToListAsync(key, serializedItems);
 
         return value;
     }
