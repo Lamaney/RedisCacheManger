@@ -190,7 +190,7 @@ public class RedisRedisCacheService<T>(
 
         var serializedValue = JsonSerializer.Serialize(value);
         await client.RemoveEntryFromHashAsync(hashKey, entityKey);
-        var result= await client.SetEntryInHashAsync(hashKey, entityKey, serializedValue);
+        var result = await client.SetEntryInHashAsync(hashKey, entityKey, serializedValue);
 
         if (result == false)
         {
@@ -214,6 +214,8 @@ public class RedisRedisCacheService<T>(
     }
 
 
+    #region ResourceManagement
+
     public void Dispose()
     {
         if (cacheManager is IDisposable cacheManagerDisposable)
@@ -231,4 +233,18 @@ public class RedisRedisCacheService<T>(
             disposable.Dispose();
         GC.SuppressFinalize(this);
     }
+
+    #endregion
+
+    #region PrivateMethods
+
+    #region HelperMethods
+
+    private static string Serialize(T value) => JsonSerializer.Serialize(value);
+
+    private static T? Deserialize(string value) => JsonSerializer.Deserialize<T>(value);
+
+    #endregion
+
+    #endregion
 }
